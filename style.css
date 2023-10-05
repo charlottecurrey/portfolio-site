@@ -1,0 +1,79 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-image: url("images/leaves.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: rgb(29, 81, 37);
+  position: relative;
+}
+
+nav h1 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: center;
+  margin: 0; /* Reset default margins */
+  padding: 0; /* Reset default padding */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+  font-size: 4vh;
+  pointer-events: none; /* Makes the h1 element ignore pointer/click events, allowing interactions with elements behind it */
+  z-index: 1; /* Ensure h1 is on top so it's visible */
+}
+
+nav a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; /* Ensure links are clickable above h1 */
+}
+
+nav a:not(:last-child) {
+  margin-right: 40px;
+}
+
+nav a:last-child {
+  margin-right: 20px;
+}
+
+nav a:hover img {
+  opacity: 0.5;
+}
+
+nav h1:hover {
+  opacity: 0.5;
+}
+
+.content-center {
+  flex-direction: column;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.about-me,
+.education {
+  text-align: center;
+  padding-left: 35vh;
+  padding-right: 35vh;
+  margin-top: 5vh;
+  font-size: x-large;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+  text-shadow: 10px 8px 7px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
