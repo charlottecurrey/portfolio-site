@@ -1,9 +1,23 @@
 body {
   display: flex;
   flex-direction: column;
-  background-image: url("images/leaves.jpg");
   background-size: cover;
   position: relative;
+  min-height: 100vh; /* Added this line */
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  background-image: url("images/leaves.jpg");
+  background-repeat: repeat; /* Added this line */
+  filter: blur(10px);
+  position: fixed; /* Change from absolute to fixed */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }
 
 nav {
@@ -70,10 +84,22 @@ nav h1:hover {
   text-align: center;
   padding-left: 35vh;
   padding-right: 35vh;
-  margin-top: 5vh;
+  margin-top: 3vh;
   font-size: x-large;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: white;
   text-shadow: 10px 8px 7px rgba(0, 0, 0, 0.5);
   font-weight: bold;
+}
+
+.school-imgs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.school-imgs img {
+  width: 40vh; /* Adjust this value to control the size */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 15vh; /* 10px horizontal spacing between images, adjust if needed */
 }
