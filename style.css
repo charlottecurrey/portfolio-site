@@ -9,7 +9,7 @@ body {
 
 body::before {
   content: "";
-  background-image: url("images/leaves.jpg");
+  background-image: url("images/flowers.jpg");
   background-repeat: repeat; /* Added this line */
   filter: blur(10px);
   position: fixed; /* Change from absolute to fixed */
@@ -25,8 +25,13 @@ nav {
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: rgb(29, 81, 37);
-  position: relative;
+  background-color: rgb(111, 81, 62);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 nav h1 {
@@ -76,20 +81,32 @@ nav h1:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  margin-top: 15vh;
 }
 
 .about-me,
-.education {
+.education,
+.skills,
+.projects {
   text-align: center;
   padding-left: 35vh;
   padding-right: 35vh;
-  margin-top: 3vh;
+  line-height: 4vh;
   font-size: x-large;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: white;
-  text-shadow: 10px 8px 7px rgba(0, 0, 0, 0.5);
+  color: rgb(111, 81, 62);
+  text-shadow: 0.5px 1px 2px white;
   font-weight: bold;
+}
+
+h2 {
+  text-shadow: 0.5px 1px 2px white;
+}
+
+.about-me img {
+  width: 40vh; /* Adjust this value to control the size */
+  height: auto;
+  border-radius: 50%;
 }
 
 .school-imgs {
@@ -99,7 +116,51 @@ nav h1:hover {
 }
 
 .school-imgs img {
-  width: 40vh; /* Adjust this value to control the size */
+  width: 40vh;
   height: auto; /* Maintain aspect ratio */
   margin: 0 15vh; /* 10px horizontal spacing between images, adjust if needed */
+}
+
+.skills img {
+  width: 65vh;
+  height: auto;
+}
+
+.freeBody img {
+  width: 60vh;
+  height: 35vh;
+  border-radius: 8%;
+}
+
+.flower-shop img {
+  width: 60vh;
+  height: 35vh;
+  border-radius: 10%;
+}
+
+.word-game img {
+  width: 58vh;
+  height: 35vh;
+  border-radius: 10%;
+}
+
+.freeBody,
+.flower-shop,
+.word-game {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3vh;
+}
+
+.projects a:hover img {
+  opacity: 0.5;
+}
+
+hr {
+  width: 50%; /* Set width to 50% of its container */
+  height: 1.5px; /* Set the height/thickness of the line */
+  background-color: rgb(111, 81, 62); /* Set the color of the line */
+  border: none; /* Remove any border */
+  margin-top: 20px; /* Add space above the line */
+  margin-bottom: 20px; /* Add space below the line */
 }
