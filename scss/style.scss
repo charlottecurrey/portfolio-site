@@ -1,79 +1,7 @@
-body {
-  display: flex;
-  flex-direction: column;
-  background-size: cover;
-  position: relative;
-  min-height: 100vh; /* Added this line */
-  background-attachment: fixed;
-}
-
-body::before {
-  content: "";
-  background-image: url("images/flowers.jpg");
-  background-repeat: repeat; /* Added this line */
-  filter: blur(10px);
-  position: fixed; /* Change from absolute to fixed */
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-}
-
-nav {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  background-color: rgb(111, 81, 62);
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-}
-
-nav h1 {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  text-align: center;
-  margin: 0; /* Reset default margins */
-  padding: 0; /* Reset default padding */
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: white;
-  font-size: 4vh;
-  pointer-events: none; /* Makes the h1 element ignore pointer/click events, allowing interactions with elements behind it */
-  z-index: 1; /* Ensure h1 is on top so it's visible */
-}
-
-nav a {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2; /* Ensure links are clickable above h1 */
-}
-
-nav a:not(:last-child) {
-  margin-right: 40px;
-}
-
-nav a:last-child {
-  margin-right: 20px;
-}
-
-nav a:hover img {
-  opacity: 0.5;
-}
-
-nav h1:hover {
-  opacity: 0.5;
-}
+@import "variables.scss";
+@import "default.scss";
+@import "nav.scss";
+@import "body.scss";
 
 .content-center {
   flex-direction: column;
@@ -82,6 +10,7 @@ nav h1:hover {
   align-items: center;
   justify-content: center;
   margin-top: 15vh;
+  width: 100%;
 }
 
 .about-me,
@@ -89,8 +18,7 @@ nav h1:hover {
 .skills,
 .projects {
   text-align: center;
-  padding-left: 35vh;
-  padding-right: 35vh;
+  max-width: 850px;
   line-height: 4vh;
   font-size: x-large;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -163,4 +91,23 @@ hr {
   border: none; /* Remove any border */
   margin-top: 20px; /* Add space above the line */
   margin-bottom: 20px; /* Add space below the line */
+}
+
+* {
+  border: solid thin red;
+}
+
+@media (max-width: $smBreak) {
+  .education {
+    display: flex;
+    flex-direction: column;
+  }
+  .school-imgs,
+  .skills-imgs,
+  .project {
+    flex-direction: column;
+    img {
+      max-width: 100%;
+    }
+  }
 }

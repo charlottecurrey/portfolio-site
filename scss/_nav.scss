@@ -1,0 +1,70 @@
+nav {
+  height: 62px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: rgb(111, 81, 62);
+  justify-content: start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  @media (max-width: $smBreak) {
+    flex-direction: column;
+    height: auto;
+  }
+  h1 {
+    text-align: center;
+    margin: 0; /* Reset default margins */
+    padding: 0; /* Reset default padding */
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    color: white;
+    font-size: 4vh;
+    pointer-events: none; /* Makes the h1 element ignore pointer/click events, allowing interactions with elements behind it */
+    z-index: 1; /* Ensure h1 is on top so it's visible */
+  }
+  a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure links are clickable above h1 */
+  }
+  .navLinksLeft {
+    display: flex;
+    gap: 2em;
+    width: 20%;
+    @media (max-width: $smBreak) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  .h1-container {
+    width: 80%;
+    h1 {
+      text-align: center;
+    }
+  }
+  .right {
+    width: 20%;
+  }
+}
+
+nav nav a:not(:last-child) {
+  margin-right: 40px;
+}
+
+nav a:last-child {
+  margin-right: 20px;
+}
+
+nav a:hover img {
+  opacity: 0.5;
+}
+
+nav h1:hover {
+  opacity: 0.5;
+}
