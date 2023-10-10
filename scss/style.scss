@@ -93,10 +93,6 @@ hr {
   margin-bottom: 20px; /* Add space below the line */
 }
 
-* {
-  border: solid thin red;
-}
-
 @media (max-width: $smBreak) {
   .education {
     display: flex;
